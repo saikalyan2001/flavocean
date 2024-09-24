@@ -1,0 +1,251 @@
+/* Reset some default styles */
+body, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer styles */
+.footer {
+  position: relative; /* To position the overlay correctly */
+  /* background-image: url('assets/7.jpg'); */
+  background-image: url(../public/Bgimages/7.jpg);
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Ensure the image does not repeat */
+  background-size: cover; /* Cover the entire footer area */
+  background-attachment: fixed; /* Fix the image relative to the viewport */
+  padding: 60px 20px; /* Increase padding for better spacing */
+  text-align: center;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  min-height: 400px; /* Adjust minimum height */
+}
+
+/* Overlay styles */
+.footer-overlay {
+  position: absolute; /* Overlay should cover the footer */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.829); /* Black overlay with slightly lower opacity */
+  z-index: 1; /* Ensure overlay is above the background */
+}
+
+/* Main content styles */
+.footer-main-content {
+  position: relative; /* Content should be above the overlay */
+  margin: 30px 40px;
+  z-index: 2; /* Ensure content is above the overlay */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  gap: 40px; /* Add spacing between sections */
+}
+
+/* Subscription styles */
+.footer-subscription {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-subscription-title {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.footer-subscription-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-subscription-input {
+  padding: 18px;
+  border: none;
+  outline: none;
+  width: 360px; /* Adjust width as needed */
+  background-color: rgba(0, 0, 0, 0.411);
+  font-size: 0.9rem;
+}
+.footer-subscription-input::placeholder {
+  color: white;
+}
+
+.footer-subscription-button {
+  position: relative;
+  padding: 15px 30px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Light transparent black color */
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  overflow: hidden; /* Hide overflow to ensure effect is contained */
+  transition: color 0.3s ease;
+}
+
+.footer-subscription-button::before,
+.footer-subscription-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: coral; /* Initial coral color */
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+
+.footer-subscription-button::before {
+  left: 0;
+  transform: scaleY(1);
+  transform-origin: right;
+}
+
+.footer-subscription-button::after {
+  right: 0;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+
+.footer-subscription-button:hover::before,
+.footer-subscription-button:hover::after {
+  transform: scaleY(0);
+}
+
+.footer-subscription-button span {
+  position: relative;
+  z-index: 1; /* Ensure the text is above the pseudo-elements */
+}
+
+/* Divider styles */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid rgb(61, 60, 60); /* Adjust the color as needed */
+  margin: 50px 0; /* Adjust spacing as needed */
+}
+
+/* Footer info styles */
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+  z-index: 2;
+  margin-top: 40px;
+}
+
+.footer-info-item {
+  display: flex;
+  flex-direction: column;
+  text-align: justify; /* Align text to justify */
+}
+
+.footer-info-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.logo-title {
+  font-size: 2.2rem;
+  margin-top: -10px;
+}
+
+.footer-info-address,
+.footer-info-city,
+.footer-info-email,
+.footer-info-phone,
+.footer-info-link,
+.footer-info-hour {
+  font-size: 1rem;
+  font-weight: bold;
+  color: grey;
+  margin: 8px 0; /* Space between paragraphs */
+}
+
+.footer-info-social {
+  margin-top: 20px;
+}
+
+.footer-info-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: rgba(128, 128, 128, 0.479); /* Grey background color */
+  color: white; /* Icon color */
+  font-size: 1rem; /* Adjust size as needed */
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  margin-right: 10px;
+}
+
+.footer-info-social-icon:last-child {
+  margin-right: 0; /* Remove margin from the last icon */
+}
+
+.footer-info-hour {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px; /* Adjust as needed */
+}
+
+.footer-info-hour::before {
+  content: attr(data-day);
+  margin-right: 30px; /* Adjust gap between text and time */
+}
+
+.closed {
+  color: coral;
+}
+
+.footer-info-hour {
+  margin-bottom: 15px; /* Adjust the value as needed */
+}
+
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  background-color: black;
+  margin-bottom: -90px;
+  margin-left: -90px;
+  margin-right: -90px;
+  margin-top: 90px;
+}
+
+.footer-bottom-text {
+  margin: 0;
+  font-size: 1rem;
+  color: rgb(179, 172, 172);
+  margin: 10px;
+}
+
+.footer-bottom-links {
+  margin-top: 0.5rem;
+}
+
+.footer-bottom-link {
+  color: rgb(179, 172, 172);
+  text-decoration: none;
+}
+
+.footer-bottom-line {
+  color: rgb(179, 172, 172);
+  font-weight: bold;
+}
+
+.footer-bottom-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-links span {
+  margin: 0 0.5rem;
+}
+
+.footer-logo {
+  color: coral;
+}
+

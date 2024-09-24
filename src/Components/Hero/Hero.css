@@ -1,0 +1,382 @@
+/* Hero section container */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 700px; /* Increased height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out content and image */
+  color: #fff; /* White text for better contrast */
+  text-align: center;
+  overflow: hidden; /* Hide overflow to keep shapes contained */
+}
+
+/* Background circle animation layer */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure the background is behind the content */
+  pointer-events: none; /* Allow clicks to pass through */
+  background: radial-gradient(circle, rgba(255, 223, 186, 0.6) 35%, transparent 36%) 0 0,
+              radial-gradient(circle, rgba(255, 183, 77, 0.6) 35%, transparent 36%) 50% 50%,
+              radial-gradient(circle, rgba(255, 105, 180, 0.6) 35%, transparent 36%) 100% 100%;
+  background-size: 150px 150px, 150px 150px, 150px 150px; /* Adjust size as needed */
+  background-repeat: no-repeat;
+  animation: animateCircles 40s infinite linear; /* Slow down animation */
+  mix-blend-mode: multiply; /* Ensure the circles blend properly with the background */
+}
+
+/* Secondary background animation layer */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Layer it below .hero::before */
+  pointer-events: none; /* Allow clicks to pass through */
+  background: radial-gradient(circle, rgba(255, 99, 71, 0.6) 35%, transparent 36%) 0 0,
+              radial-gradient(circle, rgba(60, 179, 113, 0.6) 35%, transparent 36%) 50% 50%,
+              radial-gradient(circle, rgba(135, 206, 250, 0.6) 35%, transparent 36%) 100% 100%;
+  background-size: 200px 200px, 200px 200px, 200px 200px; /* Adjust size as needed */
+  background-repeat: no-repeat;
+  animation: animateCircles 50s infinite linear; /* Slow down animation */
+  mix-blend-mode: multiply; /* Ensure the circles blend properly with the background */
+}
+
+/* Keyframes for the circle animation */
+@keyframes animateCircles {
+  0% {
+    background-position: 0 0, 50% 50%, 100% 100%;
+    background-size: 150px 150px, 150px 150px, 150px 150px;
+  }
+  25% {
+    background-position: 50% 50%, 100% 100%, 0 0;
+    background-size: 200px 200px, 200px 200px, 200px 200px;
+  }
+  50% {
+    background-position: 100% 100%, 0 0, 50% 50%;
+    background-size: 250px 250px, 250px 250px, 250px 250px;
+  }
+  75% {
+    background-position: 0 0, 50% 50%, 100% 100%;
+    background-size: 300px 300px, 300px 300px, 300px 300px;
+  }
+  100% {
+    background-position: 0 0, 50% 50%, 100% 100%;
+    background-size: 150px 150px, 150px 150px, 150px 150px;
+  }
+}
+
+
+/* Enhanced Hero Content */
+.hero-content {
+  position: relative;
+  max-width: fit-content; /* Adjust to fit with the image */
+  padding: 2rem; /* Add some padding if needed */
+  z-index: 2; /* Ensure content is above shapes */
+  opacity: 1; /* Ensure content is visible */
+  color: #fff; /* Keep text color white for contrast */
+  margin: 0 40px; /* Center content */
+  text-align: left;
+}
+
+/* Title */
+.hero-title {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideInFromBottom 1.5s ease-out forwards; /* Apply slide-in animation */
+  animation-delay: 0s; /* Ensure title appears first */
+  font-size: 4.5rem; /* Adjust font size for title */
+  color: white;
+  max-width: 450px; /* Adjust this width to control wrapping */
+  line-height: 1.2; /* Adjust line height */
+  white-space: normal; /* Allow text to wrap */
+  margin-bottom: 15px;
+}
+
+/* Description */
+.hero-description {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInFromBottom 1.5s ease-out forwards; /* Apply slide-in animation */
+  animation-delay: 0.6s; /* Increased delay for description */
+  font-size: 1.2rem; /* Adjust font size for description */
+  color: white;
+}
+
+.btn-primary {
+  background-color: rgba(255, 255, 255, 0.253); /* Tomato color */
+  color: #fff; /* Initial text color */
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-top: 2rem; /* Add margin above button */
+  position: relative; /* Position for pseudo-element */
+  overflow: hidden; /* To prevent the pseudo-element from spilling */
+  opacity: 0;
+  transform: translateY(50px); /* Initial position */
+  animation: slideInFromBottom 1.5s ease-out forwards; /* Entry animation */
+  animation-delay: 0.9s; /* Delay for button appearance */
+  transition: color 0.5s ease; /* Smooth color transition */
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  bottom: -100%; /* Start below the button */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* White door color */
+  transition: transform 0.5s ease; /* Smooth animation on hover */
+  z-index: 0; /* Place the door behind the text */
+}
+
+.btn-primary:hover::before {
+  transform: translateY(-100%); /* Slide the door up */
+}
+
+.btn-primary:hover {
+  color: palevioletred; /* Change text color to black when hovering */
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1; /* Ensures the text stays above the door */
+}
+
+
+/* Hero Image Container */
+.hero-image {
+  max-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: -80px;
+  bottom: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Hero Image */
+.hero-img {
+  width: 750px;
+  height: 700px;
+  opacity: 0; /* Start hidden for smooth transition */
+  transform: translateY(50px); /* Start offscreen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transitions */
+  animation: slideInFromBottom 1.5s ease-out forwards; /* Apply slide-in animation */
+}
+
+.hero-content.slide-in,
+.hero-image.slide-in {
+  animation: slideInFromBottom 1.5s ease-out forwards; /* Same duration for in */
+}
+
+.hero-content.slide-out,
+.hero-image.slide-out {
+  animation: slideOutToBottom 1.5s ease-in-out forwards; /* Same duration for out */
+}
+
+
+/* Keyframes for slide-in animation */
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for slide-out animation */
+@keyframes slideOutToBottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* Define a CSS variable for the navbar background color */
+:root {
+  --navbar-bg-color: linear-gradient(to right, rgba(255, 239, 240, 0.8), rgba(255, 182, 193, 0.8));
+}
+
+/* Specific to the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: var(--navbar-bg-color);
+  border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  position: sticky; /* Sticky positioning */
+  top: 0; /* Stick to the top */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it's on top */
+  overflow: hidden; /* Hide overflow to avoid scrollbar */
+}
+
+/* Logo Image */
+.logo-image {
+  width: 120px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 40px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-other-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Increased margin between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333; /* Default link color */
+  transition: color 0.3s ease;
+}
+
+.nav-links .active-link {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 600;
+}
+
+.icon-link {
+  margin-left: 20px; /* Increased margin for icon links */
+}
+
+.icon {
+  font-size: 28px; /* Increased size for icons */
+  color: #333;
+}
+
+
+
+
+/* Initially hide the element and position it below */
+.content {
+  opacity: 0;
+  transform: translateY(70%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Once the element is visible, it will slide into view */
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bottom-banner {
+  background-color: black;
+  padding: 20px; /* Adds some padding around the content */
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-around; /* Distribute space between items */
+  gap: 20px; /* Space between the sections */
+  flex-wrap: wrap; /* Allows wrapping if necessary */
+}
+
+.bottom-banner .content {
+  display: flex;
+  align-items: flex-start;
+  flex: 1; /* Allows the items to grow and fill the available space */
+  min-width: 200px; /* Minimum width for each section */
+  max-width: 30%; /* Maximum width for each section */
+  box-sizing: border-box; /* Ensures padding and borders are included in the width */
+  margin: 30px; /* Adds margin around each content section */
+}
+
+.bottom-banner .number {
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: bold; /* Make the number bold */
+  color: white; /* Choose a color that stands out */
+  display: inline-block; /* Ensures number aligns properly with the text */
+  background-color: rgba(128, 128, 128, 0.438); /* Choose a background color */
+  padding: 20px; /* Adjust padding to create an ellipse */
+  border-radius: 50%; /* Make the background elliptical */
+  text-align: center; /* Center the text within the ellipse */
+  margin: 20px; /* Add margin around the number */
+}
+
+.bottom-banner .text {
+  max-width: 100%; /* Ensure text content uses full width of its container */
+}
+
+.bottom-banner .text h2 {
+  margin: 0 0 10px 0; /* Margin below the heading for spacing */
+  font-size: 1.3rem;
+  color: white; /* Ensures text is readable on the black background */
+}
+
+.bottom-banner .text p {
+  color: grey;
+  font-size: 1.2rem;
+  width: 270px;
+  line-height: 1.5; /* Improves readability with adequate line spacing */
+}
+
+
+
+
+
+
+
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  right: 120px; /* Positioning the arrow container */
+  transform: translateY(-50%);
+  display: flex; /* Align arrows side by side */
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-arrow {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 35px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.6s ease, color 0.6s ease, transform 0.6s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: black;
+  color: white;
+}
+
+

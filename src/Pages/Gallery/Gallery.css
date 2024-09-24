@@ -1,0 +1,280 @@
+.gallery-container {
+    text-align: left;
+    padding: 20px;
+    /* background-color: rgb(172, 168, 168); */
+    height: 150vh;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative; /* Ensure stacking context */
+    background-image: url(../public/Bgimages/13.jpg);
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.gallery-content {
+    margin-left: 40px;
+    margin-top: 120px;
+    flex: 1;
+    z-index: 2; /* Ensure content stays above the gallery-photos */
+    position: relative; /* Ensure it stays in place */
+}
+
+.gallery-title {
+    font-size: 1rem;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.gallery-subtitle {
+    font-size: 3rem;
+    color: black;
+}
+
+.gallery-description {
+    max-width: 350px;
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+.gallery-arrows {
+    margin-top: 45px;
+    display: flex;
+    gap: 10px;
+}
+
+.arrow {
+    background-color: white;
+    border: none;
+    padding: 30px 35px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.6s ease, color 0.6s ease, transform 0.6s ease;
+}
+
+.arrow:hover {
+    background-color: black;
+    color: white;
+}
+
+.gallery-photos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 20px;
+    margin-top: 90px;
+    position: relative; /* Ensure it's positioned correctly */
+}
+
+.food-sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.food-item {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.food-item:hover {
+    color: coral;
+}
+
+.food-item.active {
+    color: coral;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Container for the flip effect */
+.gallery-frames-container {
+    width: 150%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+    perspective: 1000px; /* Add perspective to create a 3D effect */
+}
+
+/* Gallery frames with flip effect */
+.gallery-frames {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: calc(150% * 2); /* Adjust for duplicated images */
+    position: relative;
+}
+
+/* Each frame with flip effect */
+.gallery-frame {
+    position: relative;
+    flex-shrink: 0;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 20px solid rgba(211, 211, 211, 0.616);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d; /* Preserve 3D space for flip effect */
+}
+
+/* Add flip effect on click */
+.gallery-frame.flip {
+    transform: rotateY(90deg); /* Rotate frame on Y-axis */
+}
+
+/* Front side of the frame */
+.gallery-frame .front,
+.gallery-frame.flip .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back side when facing away */
+}
+
+/* Back side of the frame */
+.gallery-frame .back,
+.gallery-frame.flip .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back side when facing away */
+    transform: rotateY(180deg); /* Rotate back side for flip effect */
+}
+
+/* Flip effect for image and overlay */
+.gallery-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image-wrapper:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.gallery-frame:hover .gallery-overlay {
+    opacity: 1;
+}
+
+
+/* Add initial position for plus-icon and overlay-text */
+.gallery-overlay .plus-icon {
+    transform: translateY(-30%); /* Move plus-icon above */
+    transition: transform 0.6s ease; /* Add smooth transition */
+}
+
+.gallery-overlay .overlay-text {
+    transform: translateY(30%); /* Move text below */
+    transition: transform 0.6s ease; /* Add smooth transition */
+}
+
+/* On hover, bring them back into view */
+.gallery-frame:hover .gallery-overlay .plus-icon {
+    transform: translateY(0); /* Move plus-icon to its original position */
+}
+
+.gallery-frame:hover .gallery-overlay .overlay-text {
+    transform: translateY(0); /* Move text to its original position */
+}
+
+
+
+.plus-icon {
+    font-size: 2rem;
+    background-color: coral; /* Light pink background */
+    color: white; /* Icon color */
+    border-radius: 50%; /* Circular background */
+    width: 70px; /* Fixed width */
+    height: 70px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-align: center; /* Ensure text is centered */
+    transition: background-color 0.6s ease-out, color 0.6s ease-out, transform 0.6s ease-out; 
+    cursor: pointer;
+}
+
+.plus-icon:hover {
+    background-color: white; /* Slightly darker pink on hover */
+    color: coral;
+}
+
+.overlay-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: color 0.6s ease-in, transform 0.6s ease-in; 
+}
+
+.overlay-text:hover {
+    color: coral;
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3; /* Ensure modal is above other content */
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.modal:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,161 @@
+.services-container {
+    text-align: center;
+    padding: 50px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+}
+
+.services-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    margin-bottom: 25px;
+}
+
+.services-heading {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.service-item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px; /* Horizontal spacing between items */
+    padding: 10px; /* Padding inside each item */
+    position: relative; /* Position for additional effects */
+    background-color: transparent; /* Make background transparent to blend in */
+}
+
+.service-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.service-title {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.service-description {
+    font-size: 1.2rem;
+    color: grey;
+    margin-top: 20px;
+    line-height: 1.6rem;
+}
+
+.service-button {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.774);
+    border: none;
+    padding: 18px 35px;
+    cursor: pointer;
+    overflow: hidden; /* Ensure that pseudo-elements stay within the button */
+    transition: color 0.3s;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.service-button::before,
+.service-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: coral;
+    transition: transform 0.3s;
+    z-index: 0; /* Ensure pseudo-elements are below the button text */
+}
+
+.service-button::before {
+    left: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.service-button::after {
+    right: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.service-button.hovered::before,
+.service-button.hovered::after {
+    transform: scaleX(1); /* Apply hover effect when button is hovered */
+}
+
+.service-button:hover {
+    color: white; /* Ensures text color remains white when hovered */
+}
+
+.service-button span {
+    position: relative; /* Ensures the text is above pseudo-elements */
+    z-index: 2; /* Ensure text is above the background */
+}
+
+.service-item:hover .service-button {
+    color: white; /* Change text color to white on hover */
+}
+
+
+
+
+
+
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.service-image,
+.service-title,
+.service-description,
+.service-button {
+    opacity: 0; /* Start elements as invisible */
+    transform: translateY(0); /* Ensure elements are reset */
+    will-change: transform, opacity;
+}
+
+.service-item.in-view .service-image {
+    animation: slideInFromTop 0.8s ease-in-out forwards;
+    animation-delay: 0.8s; /* Consistent delay */
+}
+
+.service-item.in-view .service-title,
+.service-item.in-view .service-description,
+.service-item.in-view .service-button {
+    animation: slideInFromBottom 0.8s ease-in-out forwards;
+    animation-delay: 0.8s; /* Consistent delay */
+}
+

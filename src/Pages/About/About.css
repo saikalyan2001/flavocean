@@ -1,0 +1,184 @@
+.about-container {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.story-text {
+    font-size: 1em;
+    margin-bottom: 1.8em;
+    color: grey; /* or use a specific grey color code like #808080 */
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.service-heading {
+    font-size: 3em;
+    margin-bottom: 0.8em;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Space between text and image */
+    align-items: flex-start; /* Align items to the start to avoid overlap */
+    padding: 20px;
+    margin: 20px 30px;
+}
+
+.text-left, .text-right {
+    flex: 1; /* Allow text containers to grow and take available space */
+    max-width: 30%;
+    padding: 0 10px; /* Add padding to avoid text touching the edges */
+}
+
+.about-image-wrapper {
+    flex: 0 0 30%; /* Set a fixed width for the image wrapper */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+    padding: 0 10px; /* Add padding to avoid image touching the edges */
+}
+
+.about-image {
+    width: 120%; /* Ensure the image takes up the full width of its container */
+    height: auto;
+    transform: translateY(200px); /* Initially place the image below */
+    opacity: 0; /* Initially hidden */
+}
+
+@keyframes slideImageFromBottom {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.about-image.slide-in {
+  animation: slideImageFromBottom 1s ease-out forwards;
+}
+
+.text-title {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    margin-top: 120px;
+}
+
+.text-paragraph {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    text-align: left;
+    color: grey; /* or use a specific grey color code like #808080 */
+    margin-top: 30px;
+}
+
+.signature-container {
+  text-align: left;
+  margin-top: 2em;
+}
+
+.signature-text {
+  font-family: 'Dancing Script', cursive; /* A font that mimics a signature */
+  font-size: 2em;
+  color: #333;
+}
+
+
+/* Existing styles... */
+
+.tick-mark {
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    color: grey; /* or use a specific grey color code like #808080 */
+}
+
+.tick-icon {
+    font-size: 1em;
+    color: black; /* Set the color to black */
+    font-weight: bold; /* Make the tick mark bold */
+    margin-right: 0.5em;
+}
+
+.contact-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 120px;
+  }
+  
+  .contact-us-btn {
+    background-color: rgb(218, 87, 108);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-us-btn::before,
+  .contact-us-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    transition: transform 0.5s ease;
+    z-index: 1;
+  }
+  
+  .contact-us-btn::before {
+    top: 0;
+    transform: translateY(-100%);
+  }
+  
+  .contact-us-btn::after {
+    bottom: 0;
+    transform: translateY(100%);
+  }
+  
+  .contact-us-btn:hover::before {
+    transform: translateY(0);
+  }
+  
+  .contact-us-btn:hover::after {
+    transform: translateY(0);
+  }
+  
+  .contact-us-btn span {
+    position: relative;
+    z-index: 2; /* Keeps text on top of the doors */
+  }
+  
+  .contact-us-btn:active {
+    background-color: rgb(218, 87, 108);
+  }
+  
+
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100px) scale(1.05);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    animation-delay: 0.5s; /* Adjust this value to set the delay */
+}

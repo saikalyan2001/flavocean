@@ -1,0 +1,179 @@
+.promotion-container {
+    height: 200vh;
+    /* background-color: rgb(216, 208, 208); */
+    padding-top: 120px;
+}
+
+.promotion-text {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: grey;
+    letter-spacing: 0.2rem;
+}
+
+.promotion-heading {
+    text-align: center;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.promotion-layout {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 10px 70px;
+}
+
+.promotion-images-container {
+    display: flex;
+    gap: 10px;
+}
+
+.promotion-flavour-image {
+    width: 285px;
+    height: auto;
+}
+
+.promotion-flavour-image3 {
+    width: 545px;
+    height: auto;
+}
+
+.promotion-info-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 48px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    height: auto;
+}
+.promotion-info-container2 {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 38px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    height: auto;
+}
+
+.promotion-info-image {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-left: -20px;
+}
+
+.promotion-info-heading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.promotion-info-text {
+    font-size: 1.2rem;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+.promotion-button {
+    position: relative; /* Ensure positioning for pseudo-elements */
+    overflow: hidden; /* Hide overflow for pseudo-elements */
+    color: black; /* Ensure text color is white */
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 20px 45px;
+    border: none;
+    cursor: pointer;
+    background-color: #f7f0f2; /* Initial background color */
+    transition: background-color 2s ease, color 2s ease, transform 2s ease;
+    z-index: 1; /* Ensure button content is above pseudo-elements */
+    width: fit-content;
+    border: 2px solid #f7f0f2;
+}
+
+.promotion-button:hover{
+    color: white;
+}
+
+.promotion-button::before,
+.promotion-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: coral; /* The hover background color */
+    transition: background-color 1s ease, color 1s ease, transform 1s ease;
+    z-index: 0; /* Ensure pseudo-elements are below button content */
+}
+
+.promotion-button::before {
+    left: -10px;
+    transform: translateX(-100%);
+}
+
+.promotion-button::after {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.promotion-button:hover::before {
+    transform: translateX(0);
+}
+
+.promotion-button:hover::after {
+    transform: translateX(0);
+}
+
+.promotion-button span {
+    position: relative; /* Ensure text stays above pseudo-elements */
+    z-index: 1; /* Text above the pseudo-elements */
+}
+
+
+
+
+
+
+
+
+/* Define the slide-in effect */
+.promotion-slide-in {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+/* When the element is in view */
+.promotion-slide-in-active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Define the slide-in effect for images */
+.promotion-image-slide-in {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+/* When the image is in view */
+.promotion-image-slide-in-active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+

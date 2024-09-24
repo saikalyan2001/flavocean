@@ -1,0 +1,70 @@
+/* Apply to the entire document */
+* {
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+.header, .some-element-above-navbar {
+  margin: 0;
+  padding: 0;
+}
+
+/* Sticky Navbar */
+.sticky-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #B0C4DE; /* Adjust background as needed */
+  position: fixed;
+  top: -100px; /* Start position above the viewport */
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for sticky effect */
+  opacity: 0; /* Start with hidden opacity */
+  transition: top 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Smooth transition for showing/hiding */
+}
+
+/* When the navbar is visible */
+.sticky-navbar.visible {
+  top: 0; /* Slide into view */
+  opacity: 1; /* Fully visible */
+}
+
+/* When the navbar is hidden */
+.sticky-navbar.hidden {
+  top: -100px; /* Slide out of view */
+  opacity: 0; /* Fully hidden */
+}
+
+/* Add this for smoother transition effects */
+.sticky-navbar-transition {
+  transition: top 0.3s ease-in-out;
+}
+
+.sticky-logo-image {
+  width: 120px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 40px;
+}
+
+.sticky-navbar .nav-links {
+  display: flex;
+}
+
+.sticky-navbar .nav-links li {
+  margin: 0 15px;
+}
+
+.sticky-navbar .nav-links a {
+  text-decoration: none;
+  /* color: #333;  */
+  color: white;
+  transition: color 0.3s ease;
+}
+
