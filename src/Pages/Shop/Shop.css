@@ -3,7 +3,7 @@
     padding: 50px;
     height: 800px;
     /* background-color: rgb(197, 194, 194); */
-    background-image: url(../public/Bgimages/8.jpg);
+    background-image: url(/Bgimages/8.jpg);
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -28,18 +28,22 @@
 }
 
 
+.product-carousel {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    justify-content: center;
+  }
+
 
 .product-card {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: space-between; /* Space items between top and bottom */
-    width: fit-content; /* Allow the width to adjust based on content */
+    width: 300px; /* Allow the width to adjust based on content */
+    max-width: 100%;
     position: relative; /* Required for absolute positioning of price */
     margin: 0 auto;
 }
@@ -70,11 +74,13 @@
 .product-title {
     margin-top: 40px;
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .product-rating {
     color: gold;
     font-size: 18px; /* Adjust the size as needed */
+    margin-left: 10px;
 }
 
 .add-to-cart-button {
@@ -91,6 +97,9 @@
     justify-content: center;
     transition: background-color 0.8s ease, color 0.8s ease, transform 0.8s ease;
     margin-top: 20px;
+    width: fit-content;
+    margin-left: 10px;
+
 }
 
 .add-to-cart-button:hover {
@@ -137,39 +146,8 @@
     background-color: rgb(218, 87, 108); /* Background color on active state */
 }
 
-/* Carousel-related styles */
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-}
 
-.product-carousel {
-  display: flex;
-  transition: transform 0.5s ease;
-  gap: 20px; /* Space between cards */
-  width: calc(100% * 3); /* Adjust to fit all duplicated items */
-}
-
-.product-card {
-  min-width: 250px; /* Width of one card */
-  flex-shrink: 0;
-  margin: 0 10px;
-  text-align: center;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-
+  
 
 .carousel-buttons {
     position: absolute;

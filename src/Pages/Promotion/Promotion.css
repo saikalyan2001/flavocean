@@ -35,12 +35,12 @@
 
 .promotion-flavour-image {
     width: 285px;
-    height: auto;
+    height: 450px;
 }
 
 .promotion-flavour-image3 {
     width: 545px;
-    height: auto;
+    height: 430px;
 }
 
 .promotion-info-container {
@@ -73,12 +73,14 @@
 .promotion-info-heading {
     font-size: 1.8rem;
     margin-bottom: 15px;
+    line-height: 2.3rem;
 }
 
 .promotion-info-text {
     font-size: 1.2rem;
     color: grey;
     margin-bottom: 20px;
+    line-height: 1.8rem;
 }
 
 

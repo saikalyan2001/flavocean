@@ -26,14 +26,14 @@ function Footer() {
 
         <div className="footer-info">
           <div className="footer-info-item footer-info-bakery">
-            <h2 className="footer-info-title logo-title">Bagery.</h2>
+            <h2 className="footer-info-title logo-title">Flavour's Ocean.</h2>
           </div>
           <div className="footer-info-item footer-info-contact">
             <h2 className="footer-info-title">Contact Info</h2>
-            <p className="footer-info-address">Flat 20, Reynolds Neck, North</p>
-            <p className="footer-info-city">Helenaville, FV77 8WS</p>
-            <p className="footer-info-email">hallo@example.com</p>
-            <p className="footer-info-phone">+2(305) 587-3407</p>
+            <p className="footer-info-address">115-4-432/B, Srinivasa Colony, Nallapadu</p>
+            <p className="footer-info-city">Nallapadu Rural, Andhra Pradesh-522002, INDIA</p>
+            <p className="footer-info-email">info@flavoursocean.com</p>
+            <p className="footer-info-phone">(+91) 456-7890-3990</p>
             <div className="footer-info-social">
               <a
                 href="https://www.facebook.com"
@@ -96,7 +96,7 @@ function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-bottom-text">
-            <span className="footer-logo">Bagery</span> © 2024 All Rights Reserved
+            <span className="footer-logo">Flavour's Ocean</span> © 2024 All Rights Reserved
           </p>
           <div className="footer-bottom-links">
             <a href="/terms-of-service" className="footer-bottom-link">Terms of Service</a>

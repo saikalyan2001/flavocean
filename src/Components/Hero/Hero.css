@@ -232,7 +232,7 @@
   position: sticky; /* Sticky positioning */
   top: 0; /* Stick to the top */
   width: 100%; /* Full width */
-  z-index: 1000; /* Ensure it's on top */
+  z-index: 999; /* Ensure it's on top */
   overflow: hidden; /* Hide overflow to avoid scrollbar */
 }
 
@@ -257,6 +257,7 @@
   display: flex;
   align-items: center;
   list-style: none;
+  cursor: pointer;
 }
 
 .nav-links li {
@@ -267,6 +268,7 @@
   text-decoration: none;
   color: #333; /* Default link color */
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .nav-links .active-link {
@@ -274,6 +276,7 @@
   color: white;
   font-weight: 600;
 }
+
 
 .icon-link {
   margin-left: 20px; /* Increased margin for icon links */
@@ -285,7 +288,17 @@
 }
 
 
+.icon-search {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+}
 
+.icon-acc {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+}
 
 /* Initially hide the element and position it below */
 .content {

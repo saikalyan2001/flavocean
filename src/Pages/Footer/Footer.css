@@ -8,7 +8,7 @@ body, h2, p {
 .footer {
   position: relative; /* To position the overlay correctly */
   /* background-image: url('assets/7.jpg'); */
-  background-image: url(../public/Bgimages/7.jpg);
+  background-image: url(/Bgimages/7.jpg);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Ensure the image does not repeat */
   background-size: cover; /* Cover the entire footer area */

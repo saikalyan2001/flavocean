@@ -20,7 +20,7 @@ body, html {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  background-color: #B0C4DE; /* Adjust background as needed */
+  background-color: #e99361; /* Adjust background as needed */
   position: fixed;
   top: -100px; /* Start position above the viewport */
   width: 100%;
@@ -68,3 +68,66 @@ body, html {
   transition: color 0.3s ease;
 }
 
+
+.brand-logo {
+  color: white;
+  font-size: 2rem;
+  margin-left: 20px;
+}
+
+
+.icon-search {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.icon-acc {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+
+
+.search-popup {
+  position: absolute;
+  top: 60px; /* Adjust based on your navbar height */
+  right: 20px; /* Adjust as necessary */
+  background-color: white; /* Background color of the pop-up */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.search-input {
+  width: 200px; /* Adjust as necessary */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc; /* Add border for clarity */
+  background-color: white; /* Ensure results are visible */
+  position: absolute;
+  top: 60px; /* Adjust based on your navbar height */
+  right: 20px; /* Adjust as necessary */
+  z-index: 1000; /* Ensure it appears above other content */
+  max-height: 150px; /* Limit height for overflow */
+  overflow-y: auto; /* Allow scrolling if needed */
+}
+
+.search-result-item {
+  padding: 10px;
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}

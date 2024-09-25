@@ -1,5 +1,5 @@
 import './Shop.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 const products = [
   { id: 1, title: 'Vanilla Ice Cream', price: '$10.00', rating: 5, image: '/shop/Product-1.jpg' },
@@ -11,7 +11,6 @@ const products = [
 function Shop() {
   const [currentIndex, setCurrentIndex] = useState(0); // Start from the first product
   const productRef = useRef(null);
-  const intervalRef = useRef(null);
 
   // Handle next slide
   const handleNext = () => {
@@ -23,36 +22,20 @@ function Shop() {
     setCurrentIndex(prevIndex => (prevIndex - 1 + products.length) % products.length); // Loop back to the last product if at the start
   };
 
-  // Auto-scroll functionality
-  useEffect(() => {
-    const startAutoScroll = () => {
-      intervalRef.current = setInterval(() => {
-        handleNext();
-      }, 3000); // Scroll every 3 seconds
-    };
-
-    startAutoScroll();
-
-    return () => {
-      clearInterval(intervalRef.current); // Clean up the interval
-    };
-  }, []);
-
   return (
     <div className="shop-container" id='shop'>
       <div className="shop-text">
-        <p className="para-shop">OUR SHOP</p>
+        <p className="para-shop">OUR STORE</p>
         <div className="heading-container">
-          <h1 className="heading-shop">Our all Delicious <br /> Products.</h1>
+          <h1 className="heading-shop">Explore Our Tasty <br /> Offerings.</h1>
         </div>
       </div>
 
-      <div className="carousel-buttons">
-        <button className="carousel-button prev" onClick={handlePrev}>‹</button>
-        <button className="carousel-button next" onClick={handleNext}>›</button>
-      </div>
-
       <div className="carousel-container">
+        <div className="carousel-buttons">
+          <button className="carousel-button prev" onClick={handlePrev}>‹</button>
+          <button className="carousel-button next" onClick={handleNext}>›</button>
+        </div>
         <div
           className="product-carousel"
           style={{
@@ -61,8 +44,8 @@ function Shop() {
           }}
           ref={productRef}
         >
-          {products.map((product, index) => (
-            <div key={index} className="product-card">
+          {products.map((product) => (
+            <div key={product.id} className="product-card">
               <div className="product-price">{product.price}</div>
               <img src={product.image} alt={product.title} className="product-image" />
               <h2 className="product-title">{product.title}</h2>

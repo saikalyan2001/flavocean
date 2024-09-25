@@ -2,7 +2,9 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Hero.css"; // Import CSS for styling
 import { ThemeContext } from "../../ThemeContext";
-import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
+// import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
 
 import {
   MdAccountCircle,
@@ -22,13 +24,13 @@ const heroData = [
     title: "Taste From The Good Old Days.",
     description: "Trend Spotted by Europe Locals - Colorful Macarons!",
     imageUrl: "/hero/banner-image-2.png",
-    bgColor: "#3A2403", // Soft light blue
+    bgColor: "#4169E1", // Soft light blue
   },
   {
     title: "Taste From The Good Old Days.",
     description: "Trend Spotted by Europe Locals - Colorful Macarons!",
     imageUrl: "/hero/banner-image-3.png",
-    bgColor: "#B0E0E6", // Soft peach pink
+    bgColor: "#2E8B57", // Soft peach pink
   },
 ];
 
@@ -37,6 +39,8 @@ function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slide, setSlide] = useState("slide-in"); // For sliding effect
   const [animationKey, setAnimationKey] = useState(0); // Key to force animation restart
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const currentBgColor = heroData[currentIndex].bgColor;
@@ -103,42 +107,67 @@ function Hero() {
       {/* Initial Navbar */}
       <nav className="navbar" id="top">
         <div className="logo">
-          <img
+          <h2 className="brand-logo">Flavour's Ocean</h2>
+          {/* <img
             src="/images/logo.png"
             alt="flavors-ocean Logo"
             className="logo-image"
-          />
+          /> */}
         </div>
 
         <ul className="nav-links">
           <li>
-            <NavLink end to="/" className="active-link">
+            <Link to="top" smooth={true} duration={500} className="active-link">
               Home
-            </NavLink>
+            </Link>
           </li>
-          {/* Use HashLink for smooth scrolling */}
           <li>
-            <Link smooth to="#about" className="active-link">
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               About
             </Link>
           </li>
           <li>
-            <Link smooth to="#shop" className="active-link">
+            <Link
+              to="shop"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Shop
             </Link>
           </li>
           <li>
-            <Link smooth to="#services" className="active-link">
+            <Link
+              to="services"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Services
             </Link>
           </li>
           <li>
-            <Link smooth to="#gallery" className="active-link">
+            <Link
+              to="gallery"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Gallery
             </Link>
           </li>
           <li>
-            <Link smooth to="#contact" className="active-link">
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Contact
             </Link>
           </li>
@@ -146,23 +175,25 @@ function Hero() {
 
         <ul className="nav-other-links">
           {/* ... other links ... */}
-          <li className="icon-link">
+          {/* <li className="icon-link">
             <NavLink className="active-link">
-              <MdSearch className="icon" />
+              <MdSearch className="icon-search" />
             </NavLink>
-          </li>
+          </li> */}
           <li className="icon-link">
-            <NavLink to="/account" className="active-link">
-              <MdAccountCircle className="icon" />
-            </NavLink>
+            <p className="active-link">
+              <MdAccountCircle
+                className="icon-acc"
+                onClick={() => navigate("/login")}
+              />
+            </p>
           </li>
         </ul>
-      
       </nav>
 
       <section
         className="hero"
-        style={{ background: heroData[currentIndex].bgColor }} 
+        style={{ background: heroData[currentIndex].bgColor }}
       >
         <div className="carousel-content">
           <div className={`hero-content ${slide}`} key={animationKey}>

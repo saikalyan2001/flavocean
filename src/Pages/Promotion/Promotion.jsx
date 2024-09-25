@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import './Promotion.css'; // Ensure this import is present
+import React, { useEffect } from "react";
+import "./Promotion.css"; // Ensure this import is present
 
 const imageData = [
   {
@@ -28,41 +28,45 @@ const imageData2 = [
 function Promotion() {
   useEffect(() => {
     const handleScroll = () => {
-      const elements = document.querySelectorAll('.promotion-info-container, .promotion-info-container2');
-      const images = document.querySelectorAll('.promotion-image-slide-in');
+      const elements = document.querySelectorAll(
+        ".promotion-info-container, .promotion-info-container2"
+      );
+      const images = document.querySelectorAll(".promotion-image-slide-in");
       const windowHeight = window.innerHeight;
-      
+
       elements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - 100) { // Adjust the value as needed
-          element.classList.add('promotion-slide-in-active');
+        if (elementTop < windowHeight - 100) {
+          // Adjust the value as needed
+          element.classList.add("promotion-slide-in-active");
         }
       });
 
       images.forEach((img) => {
         const imgTop = img.getBoundingClientRect().top;
 
-        if (imgTop < windowHeight - 100) { // Adjust the value as needed
-          img.classList.add('promotion-image-slide-in-active');
+        if (imgTop < windowHeight - 100) {
+          // Adjust the value as needed
+          img.classList.add("promotion-image-slide-in-active");
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Initial check in case elements are already in view
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="promotion-container">
       <div className="promotion-content">
-        <p className="promotion-text">PROMOTION</p>
+        <p className="promotion-text">LIMITED TIME OFFER</p>
         <h1 className="promotion-heading">
-          Check all Flavours <br /> Summer Promo
+          Discover All Flavors <br /> Summer Specials
         </h1>
 
         <div className="promotion-layout">
@@ -84,13 +88,15 @@ function Promotion() {
               className="promotion-info-image"
             />
             <h2 className="promotion-info-heading">
-              A Taste all Folks Keep <br /> Coming to
+              A Flavor Everyone Loves <br /> Come Join Us
             </h2>
             <p className="promotion-info-text">
-              Excepteur sint occaecat cupidat proident sunt culpa officia
-              deserunt mollit anim est laborum.
+              Experience the delightful taste that keeps our customers coming
+              back for more.
             </p>
-            <button className="promotion-button"><span>Let's Order Now</span></button>
+            <button className="promotion-button">
+              <span>Let's Order Now</span>
+            </button>
           </div>
         </div>
 
@@ -102,13 +108,15 @@ function Promotion() {
               className="promotion-info-image"
             />
             <h2 className="promotion-info-heading">
-              A Taste all Folks Keep <br /> Coming to
+              A Flavor Everyone Loves <br /> Come Join Us
             </h2>
             <p className="promotion-info-text">
-              Excepteur sint occaecat cupidat proident sunt culpa officia
-              deserunt mollit anim est laborum.
+              Experience the delightful taste that keeps our customers coming
+              back for more.
             </p>
-            <button className="promotion-button"><span>Let's Order Now</span></button>
+            <button className="promotion-button">
+              <span>Let's Order Now</span>
+            </button>
           </div>
 
           <div className="promotion-images-container">

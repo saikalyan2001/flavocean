@@ -1,13 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
+// import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
 import "./Navbar.css";
 import { MdAccountCircle, MdSearch } from "react-icons/md";
 import { ThemeContext } from "../../ThemeContext";
+import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { themeColor } = useContext(ThemeContext);
   const [isSticky, setIsSticky] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // State for search pop-up
+
+  const navigate = useNavigate();
 
   const navbarStyle = {
     backgroundColor: themeColor,
@@ -15,7 +20,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const navbarHeight = document.querySelector(".navbar").offsetHeight;
+      const navbarHeight =
+        document.querySelector(".sticky-navbar").offsetHeight;
       if (window.scrollY >= navbarHeight) {
         setIsSticky(true);
       } else {
@@ -29,65 +35,105 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleSearch = () => {
+    setIsSearchOpen((prev) => !prev); // Toggle the search pop-up
+  };
+
   return (
     <>
       {/* Sticky Navbar */}
       <nav className={`sticky-navbar ${isSticky ? "visible" : "hidden"}`}>
         <div className="logo">
-          <img
-            src="/images/logo.png"
-            alt="flavors-ocean Logo"
-            className="sticky-logo-image"
-          />
+          <h2 className="brand-logo">Flavour's Ocean</h2>
         </div>
 
         <ul className="nav-links">
           <li>
-            <Link smooth to="#top" className="active-link">
+            <Link to="top" smooth={true} duration={500} className="active-link">
               Home
             </Link>
           </li>
-          {/* Use HashLink for smooth scrolling */}
           <li>
-            <Link smooth to="#about" className="active-link">
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               About
             </Link>
           </li>
           <li>
-            <Link smooth to="#shop" className="active-link">
+            <Link
+              to="shop"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Shop
             </Link>
           </li>
           <li>
-            <Link smooth to="#services" className="active-link">
+            <Link
+              to="services"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Services
             </Link>
           </li>
           <li>
-            <Link smooth to="#gallery" className="active-link">
+            <Link
+              to="gallery"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Gallery
             </Link>
           </li>
           <li>
-            <Link smooth to="#contact" className="active-link">
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="active-link"
+            >
               Contact
             </Link>
           </li>
         </ul>
 
         <ul className="nav-other-links">
-          {/* ... other links ... */}
-          <li className="icon-link">
+          {/* <li className="icon-link" onClick={toggleSearch}>
             <NavLink className="active-link">
-              <MdSearch className="icon" />
+              <MdSearch className="icon-search" />
             </NavLink>
-          </li>
+          </li> */}
+
           <li className="icon-link">
-            <NavLink to="/account" className="active-link">
-              <MdAccountCircle className="icon" />
-            </NavLink>
+            <p className="active-link">
+              <MdAccountCircle
+                className="icon-acc"
+                onClick={() => navigate("/login")}
+              />
+            </p>
           </li>
+          
         </ul>
+
+        {/* Search Pop-up */}
+        {isSearchOpen && (
+          <div className="search-popup">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search-input"
+              onBlur={() => setIsSearchOpen(false)} // Close the popup on blur
+            />
+          </div>
+        )}
       </nav>
     </>
   );

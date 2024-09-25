@@ -9,17 +9,18 @@ function About() {
     <div className="about-container" ref={containerRef} id="about">
       <p className="story-text">OUR STORY</p>
       <h2 className="service-heading">
-        Traditional & Modern Service <br /> Since 1990
+        Blending Tradition & Innovation <br /> Established in 2024
       </h2>
       <div className="image-container">
         <div className="text-left">
-          <h3 className="text-title">About Bagery</h3>
+          <h3 className="text-title">About Flavour's Ocean</h3>
           <p className="text-paragraph">
-            Excepteur sint occaecat cupidat non proident sunt in culpa qui
-            officia deserunt mollit anim est laborum. magni dolores eos ratione
-            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
-            aliquam quaerat voluptatem.
+            Flavour's Ocean is a destination where culinary artistry meets
+            passion. We are dedicated to crafting extraordinary dishes that
+            blend the finest ingredients with a touch of innovation. Whether
+            you're seeking a classic comfort dish or an adventurous flavor
+            combination, Flavour's Ocean promises an unforgettable dining
+            experience that celebrates the joy of food and community.
           </p>
           <div className="signature-container">
             <span className="signature-text">flavors ocean</span>
@@ -36,23 +37,25 @@ function About() {
           />
         </div>
         <div className="text-right">
-          <h3 className="text-title">Bagery Overview</h3>
+          <h3 className="text-title">Flavour's Ocean Overview</h3>
           <p className="text-paragraph">
-            Accusan enim ipsam voluptam quia voluptas sit aspern odit aut sed
-            quia consequnt magni dolores eos qui ratione voluptatem. Sequi
-            nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-            amet.
+            Discover the unparalleled richness of taste with Flavour's Ocean.
+            Immerse yourself in a world where every ingredient tells a story,
+            and every dish brings a journey of delightful experiences. Dive into
+            a culinary adventure that satisfies not just your hunger but your
+            soul.
           </p>
           <div className="tick-mark">
-            <span className="tick-icon">&#10003;</span> Ratione voluptatem.
-            sequi nesciunt.
+            <span className="tick-icon">&#10003;</span>
+            Crafted with the finest ingredients.
           </div>
           <div className="tick-mark">
-            <span className="tick-icon">&#10003;</span> Ratione voluptatem.
+            <span className="tick-icon">&#10003;</span>
+            Innovative culinary techniques.
           </div>
           <div className="tick-mark">
-            <span className="tick-icon">&#10003;</span> Ratione voluptatem
-            sequi.
+            <span className="tick-icon">&#10003;</span>A memorable dining
+            experience.
           </div>
         </div>
       </div>

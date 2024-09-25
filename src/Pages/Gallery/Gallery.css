@@ -7,7 +7,7 @@
     align-items: flex-start;
     box-sizing: border-box;
     position: relative; /* Ensure stacking context */
-    background-image: url(../public/Bgimages/13.jpg);
+    background-image: url(/Bgimages/13.jpg);
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
