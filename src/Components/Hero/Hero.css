@@ -212,8 +212,239 @@
 }
 
 
+/* Responsive adjustments for the hero section */
+@media (max-width: 1024px) {
+  .hero {
+    height: 600px; /* Adjust height for smaller screens */
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .hero-image {
+    display: none; /* Hide hero image on screens smaller than 1024px */
+  }
+
+  .carousel-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align */
+  }
+
+  .hero-content {
+    margin: 0 20px; /* Reduce margin on smaller screens */
+    text-align: left; /* Center text for smaller screens */
+  }
+
+  .hero-title {
+    font-size: 5rem; /* Smaller title font size */
+  }
+
+  .hero-description {
+    font-size: 1.2rem; /* Smaller description font size */
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem; /* Smaller button padding */
+    font-size: 1.2rem; /* Smaller button font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 500px; /* Further adjust height for mobile */
+  }
+
+  .hero-title {
+    font-size: 4rem; /* Smaller title font size */
+  }
+
+  .hero-description {
+    font-size: 1.2rem; /* Smaller description font size */
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.5rem; /* Further reduce button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 400px; /* Adjust height for very small screens */
+  }
+
+  .hero-title {
+    font-size: 2.5rem; /* Even smaller title font size */
+  }
+
+  .hero-description {
+    font-size: 1rem; /* Even smaller description font size */
+  }
+
+  .btn-primary {
+    padding: 1.2rem 2rem; /* Adjust button padding */
+    font-size: 1rem; /* Adjust button font size */
+  }
+}
 
 
+/* Start Carousel arrows */
+
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  right: 120px; /* Positioning the arrow container */
+  transform: translateY(-50%);
+  display: flex; /* Align arrows side by side */
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-arrow {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 35px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.6s ease, color 0.6s ease, transform 0.6s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: black;
+  color: white;
+}
+
+/* End Carousel arrows */
+
+
+/* Hide carousel arrows for smaller screens */
+@media (max-width: 1024px) {
+  .carousel-arrows {
+    display: none; /* Hide carousel arrows on screens smaller than 1024px */
+  }
+}
+
+
+/* Start Bottom Banner */
+
+/* Initially hide the element and position it below */
+.content {
+  opacity: 0;
+  transform: translateY(70%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Once the element is visible, it will slide into view */
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bottom-banner {
+  background-color: black;
+  padding: 20px; /* Adds some padding around the content */
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-around; /* Distribute space between items */
+  gap: 20px; /* Space between the sections */
+  flex-wrap: wrap; /* Allows wrapping if necessary */
+}
+
+.bottom-banner .content {
+  display: flex;
+  align-items: flex-start;
+  flex: 1; /* Allows the items to grow and fill the available space */
+  min-width: 200px; /* Minimum width for each section */
+  max-width: 30%; /* Maximum width for each section */
+  box-sizing: border-box; /* Ensures padding and borders are included in the width */
+  margin: 30px; /* Adds margin around each content section */
+}
+
+.bottom-banner .number {
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: bold; /* Make the number bold */
+  color: white; /* Choose a color that stands out */
+  display: inline-block; /* Ensures number aligns properly with the text */
+  background-color: rgba(128, 128, 128, 0.438); /* Choose a background color */
+  padding: 20px; /* Adjust padding to create an ellipse */
+  border-radius: 50%; /* Make the background elliptical */
+  text-align: center; /* Center the text within the ellipse */
+  margin: 20px; /* Add margin around the number */
+}
+
+.bottom-banner .text {
+  max-width: 100%; /* Ensure text content uses full width of its container */
+}
+
+.bottom-banner .text h2 {
+  margin: 0 0 10px 0; /* Margin below the heading for spacing */
+  font-size: 1.3rem;
+  color: white; /* Ensures text is readable on the black background */
+}
+
+.bottom-banner .text p {
+  color: grey;
+  font-size: 1.2rem;
+  width: 270px;
+  line-height: 1.5; /* Improves readability with adequate line spacing */
+}
+
+/* End Bottom Banner */
+
+/* Start Bottom Banner */
+
+/* Existing styles remain unchanged */
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .bottom-banner .content {
+    max-width: 45%; /* Allow more flexibility on medium-sized screens */
+  }
+}
+
+@media (max-width: 800px) {
+  .bottom-banner {
+    flex-direction: column; /* Stack the contents vertically */
+    align-items: center; /* Center the items */
+  }
+
+  .bottom-banner .content {
+    max-width: 80%; /* Allow full width on smaller screens */
+    margin: 15px 0; /* Adjust margin for better spacing */
+  }
+
+  .bottom-banner .number {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .bottom-banner .text h2 {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+
+  .bottom-banner .text p {
+    font-size: 1rem; /* Reduce paragraph font size */
+    width: auto; /* Let the width be auto on small screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .bottom-banner .number {
+    font-size: 1.2rem; /* Further reduce number size for very small screens */
+  }
+
+  .bottom-banner .text h2 {
+    font-size: 1rem; /* Further reduce heading size */
+  }
+
+  .bottom-banner .text p {
+    font-size: 0.9rem; /* Further reduce paragraph font size */
+  }
+}
+
+/* End Bottom Banner */
+
+
+
+
+
+/* Start Navabr */
 
 /* Define a CSS variable for the navbar background color */
 :root {
@@ -300,96 +531,154 @@
   font-weight: 600;
 }
 
-/* Initially hide the element and position it below */
-.content {
-  opacity: 0;
-  transform: translateY(70%);
-  transition: transform 1s ease-out, opacity 1s ease-out;
+/* End Navabr */
+
+.close-icon {
+  cursor: pointer; /* Change cursor to pointer for close icon */
+  align-self: flex-end; /* Align to the end */
+  margin-bottom: 20px; /* Space below the close icon */
+  display: none;
 }
 
-/* Once the element is visible, it will slide into view */
-.content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.bottom-banner {
-  background-color: black;
-  padding: 20px; /* Adds some padding around the content */
-  display: flex; /* Use flexbox for horizontal alignment */
-  justify-content: space-around; /* Distribute space between items */
-  gap: 20px; /* Space between the sections */
-  flex-wrap: wrap; /* Allows wrapping if necessary */
-}
-
-.bottom-banner .content {
-  display: flex;
-  align-items: flex-start;
-  flex: 1; /* Allows the items to grow and fill the available space */
-  min-width: 200px; /* Minimum width for each section */
-  max-width: 30%; /* Maximum width for each section */
-  box-sizing: border-box; /* Ensures padding and borders are included in the width */
-  margin: 30px; /* Adds margin around each content section */
-}
-
-.bottom-banner .number {
-  font-size: 1.5rem; /* Adjust size as needed */
-  font-weight: bold; /* Make the number bold */
-  color: white; /* Choose a color that stands out */
-  display: inline-block; /* Ensures number aligns properly with the text */
-  background-color: rgba(128, 128, 128, 0.438); /* Choose a background color */
-  padding: 20px; /* Adjust padding to create an ellipse */
-  border-radius: 50%; /* Make the background elliptical */
-  text-align: center; /* Center the text within the ellipse */
-  margin: 20px; /* Add margin around the number */
-}
-
-.bottom-banner .text {
-  max-width: 100%; /* Ensure text content uses full width of its container */
-}
-
-.bottom-banner .text h2 {
-  margin: 0 0 10px 0; /* Margin below the heading for spacing */
-  font-size: 1.3rem;
-  color: white; /* Ensures text is readable on the black background */
-}
-
-.bottom-banner .text p {
-  color: grey;
-  font-size: 1.2rem;
-  width: 270px;
-  line-height: 1.5; /* Improves readability with adequate line spacing */
+.close-icon .icon {
+  font-size: 2rem; /* Size for the close icon */
+  color: #fff; /* Color for the icon, change if necessary */
 }
 
 
 
 
 
+/* Responsive Styles for Navbar */
+@media (max-width: 1200px) {
+  .nav-links {
+    display: none; /* Hide nav links by default */
+    flex-direction: column; /* Stack the links vertically */
+    position: absolute; /* Position it absolutely */
+    top: 80px; /* Position it below the navbar */
+    left: 0; /* Align to the left */
+    right: 0; /* Full width */
+    background: var(--navbar-bg-color); /* Use the same background */
+    padding: 20px; /* Add some padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    z-index: 999; /* Ensure it appears above other content */
+  }
 
-
-.carousel-arrows {
-  position: absolute;
-  top: 50%;
-  right: 120px; /* Positioning the arrow container */
-  transform: translateY(-50%);
-  display: flex; /* Align arrows side by side */
-  gap: 8px;
-  z-index: 10;
+  .nav-links.active {
+    display: flex; /* Show the links when the menu is open */
+    background-color: black; /* Background color of the menu */
+    width: 50%; /* Width of the menu */
+    height: 100vh; /* Full screen height */
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    flex-direction: column; /* Stack the links vertically */
+    z-index: 1000; /* Ensure it appears above other content */
+    padding: 20px; /* Add padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    transform: translateX(50%); /* Start off-screen to the right */
+    transition: transform 0.5s ease, visibility 0.5s; /* Add transition for smooth slide effect */
+    visibility: visible;
 }
 
-.carousel-arrow {
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 35px;
-  cursor: pointer;
-  font-size: 20px;
-  transition: background-color 0.6s ease, color 0.6s ease, transform 0.6s ease;
+/* Add this to your active state for sliding in */
+.nav-links.active.show {
+    transform: translateX(0); /* Slide in to original position */
 }
 
-.carousel-arrow:hover {
-  background-color: black;
-  color: white;
+/* For hiding the menu */
+.nav-links:not(.active) {
+  visibility: hidden; /* Hide when not active */
+  /* This will prevent the space from being taken up */
 }
 
+
+  .hamburger {
+    display: flex; /* Show the hamburger icon */
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    display: flex;
+  }
+
+  .icon {
+    font-size: 2.5rem; /* Size for the hamburger icon */
+    color: #333; /* Color for the icon */
+  }
+
+  .nav-other-links {
+    display: flex; /* Ensure the account icon is visible */
+    align-items: center; /* Center vertically */
+  }
+
+  .icon-link {
+    margin-left: 20px; /* Maintain margin for the account icon */
+  }
+}
+
+/* Additional styles for screens smaller than 600px */
+@media (max-width: 600px) {
+  .nav-links.active {
+    width: 60%;
+    transform: translateX(40%); /* Start off-screen to the right */
+}
+
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px; /* Add space below the logo */
+  }
+
+
+  .nav-other-links {
+    margin-right: 65px;
+  }
+
+
+  .brand-logo {
+    text-align: center; /* Center the logo text */
+  }
+}
+
+
+@media (min-width: 1201px) {
+  .hamburger {
+    display: none; /* Hide hamburger on larger screens */
+  }
+
+  .nav-links {
+    display: flex; /* Show nav links on larger screens */
+  }
+
+  .nav-other-links {
+    display: flex; /* Show other links on larger screens */
+  }
+
+}
+
+
+
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(0); /* End in original position */
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0); /* Start in original position */
+  }
+  100% {
+    transform: translateX(100%); /* Move off-screen to the right */
+  }
+}
 

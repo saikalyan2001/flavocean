@@ -11,6 +11,8 @@ import {
   MdSearch,
   MdArrowBackIos,
   MdArrowForwardIos,
+  MdMenu,
+  MdClose
 } from "react-icons/md"; // Add arrow icons
 
 const heroData = [
@@ -18,19 +20,22 @@ const heroData = [
     title: "Taste From The Good Old Days.",
     description: "Trend Spotted by Europe Locals - Colorful Macarons!",
     imageUrl: "/hero/banner-image-1.png",
-    bgColor: "#DB7093", // Light peach
+    // bgColor: "#DB7093", 
+    bgColor: "#f48c1c  ", // Orange
   },
   {
     title: "Taste From The Good Old Days.",
     description: "Trend Spotted by Europe Locals - Colorful Macarons!",
     imageUrl: "/hero/banner-image-2.png",
-    bgColor: "#4169E1", // Soft light blue
+    // bgColor: "#4169E1", // 
+    bgColor: "#e42c2c    ", // Red
   },
   {
     title: "Taste From The Good Old Days.",
     description: "Trend Spotted by Europe Locals - Colorful Macarons!",
     imageUrl: "/hero/banner-image-3.png",
-    bgColor: "#2E8B57", // Soft peach pink
+    // bgColor: "#2E8B57", // 
+    bgColor: "#d44474   ", // Pink
   },
 ];
 
@@ -39,7 +44,27 @@ function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slide, setSlide] = useState("slide-in"); // For sliding effect
   const [animationKey, setAnimationKey] = useState(0); // Key to force animation restart
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuOpen) {
+        navLinks.classList.remove('show'); // Start closing animation
+        setTimeout(() => {
+            navLinks.classList.remove('active'); // Remove active class after animation
+        }, 500); // Match the timeout with the CSS transition duration
+    } else {
+        navLinks.classList.add('active'); // Make the menu active
+        setTimeout(() => {
+            navLinks.classList.add('show'); // Start opening animation
+        }, 10); // Small delay to allow active to apply before show
+    }
+};
+
+
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -106,90 +131,66 @@ function Hero() {
     <>
       {/* Initial Navbar */}
       <nav className="navbar" id="top">
-        <div className="logo">
-          <h2 className="brand-logo">Flavour's Ocean</h2>
-          {/* <img
-            src="/images/logo.png"
-            alt="flavors-ocean Logo"
-            className="logo-image"
-          /> */}
-        </div>
+  <div className="logo">
+    <h2 className="brand-logo">Flavour's Ocean</h2>
+  </div>
 
-        <ul className="nav-links">
-          <li>
-            <Link to="top" smooth={true} duration={500} className="active-link">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              className="active-link"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="shop"
-              smooth={true}
-              duration={500}
-              className="active-link"
-            >
-              Shop
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="services"
-              smooth={true}
-              duration={500}
-              className="active-link"
-            >
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="gallery"
-              smooth={true}
-              duration={500}
-              className="active-link"
-            >
-              Gallery
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              className="active-link"
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
+  {/* Hamburger Icon */}
+  <div className="hamburger" onClick={toggleMenu}>
+    {menuOpen ? <MdClose className="icon" /> : <MdMenu className="icon" />}
+  </div>
 
-        <ul className="nav-other-links">
-          {/* ... other links ... */}
-          {/* <li className="icon-link">
-            <NavLink className="active-link">
-              <MdSearch className="icon-search" />
-            </NavLink>
-          </li> */}
-          <li className="icon-link">
-            <p className="active-link">
-              <MdAccountCircle
-                className="icon-acc"
-                onClick={() => navigate("/login")}
-              />
-            </p>
-          </li>
-        </ul>
-      </nav>
+  {/* Sidebar Navigation Links */}
+  <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+    {/* Close Icon */}
+    <li className="close-icon" onClick={toggleMenu}>
+      <MdClose className="icon" />
+    </li>
+
+    <li>
+      <Link to="top" smooth={true} duration={500} className="active-link">
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link to="about" smooth={true} duration={500} className="active-link">
+        About
+      </Link>
+    </li>
+    <li>
+      <Link to="shop" smooth={true} duration={500} className="active-link">
+        Shop
+      </Link>
+    </li>
+    <li>
+      <Link to="services" smooth={true} duration={500} className="active-link">
+        Services
+      </Link>
+    </li>
+    <li>
+      <Link to="gallery" smooth={true} duration={500} className="active-link">
+        Gallery
+      </Link>
+    </li>
+    <li>
+      <Link to="contact" smooth={true} duration={500} className="active-link">
+        Contact
+      </Link>
+    </li>
+  </ul>
+
+  <ul className="nav-other-links">
+    <li className="icon-link">
+      <p className="active-link">
+        <MdAccountCircle
+          className="icon-acc"
+          onClick={() => navigate("/login")}
+        />
+      </p>
+    </li>
+  </ul>
+</nav>
+
 
       <section
         className="hero"

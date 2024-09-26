@@ -1,14 +1,13 @@
 .shop-container {
     position: relative;
     padding: 50px;
-    height: 800px;
+    height: fit-content;
     /* background-color: rgb(197, 194, 194); */
     background-image: url(/Bgimages/8.jpg);
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
-
 
 
 .shop-text {
@@ -27,9 +26,9 @@
     letter-spacing: 0.2rem;
 }
 
-
 .product-carousel {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px; /* Space between cards */
     justify-content: center;
   }
@@ -176,3 +175,69 @@
   
   
   
+
+
+
+  /* Responsive */
+
+
+/* Add the following media queries at the end of your Shop.css file */
+
+@media (max-width: 1200px) {
+    .product-carousel {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+
+    .carousel-buttons {
+        top: 80px; /* Adjust button position */
+        right: 50px; /* Adjust button position */
+    }
+}
+
+@media (max-width: 900px) {
+    .product-carousel {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+
+    .heading-shop {
+        font-size: 2.5rem; /* Smaller heading on small screens */
+    }
+
+    .carousel-buttons {
+        top: 60px; /* Adjust button position */
+        right: 30px; /* Adjust button position */
+    }
+
+    .carousel-button {
+        font-size: 20px;
+        height: 70px;
+        width: 70px;
+      }
+}
+
+@media (max-width: 600px) {
+    .product-carousel {
+        grid-template-columns: 1fr; /* 1 column on extra small screens */
+    }
+
+    .heading-shop {
+        font-size: 2rem; /* Even smaller heading on extra small screens */
+    }
+
+    .product-card {
+        width: fit-content; /* Full width for product cards */
+        margin: 0 auto; /* No margin */
+    }
+
+    .carousel-buttons {
+        top: 40px; /* Adjust button position */
+        right: 20px; /* Adjust button position */
+    }
+
+    .carousel-button {
+        font-size: 20px;
+        height: 70px;
+        width: 70px;
+      }
+    
+}

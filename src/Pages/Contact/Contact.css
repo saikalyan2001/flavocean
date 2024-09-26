@@ -1,7 +1,7 @@
 .contact-container {
   padding: 20px;
   /* background-color: lightpink; */
-  height: 150vh; /* Adjust as needed */
+  height: fit-content; /* Adjust as needed */
   background-image: url(/Bgimages/10.png);
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the image */
@@ -189,4 +189,75 @@
   50% { transform: translateX(5px); }
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
+}
+
+
+
+
+
+
+
+/* Responsiveness */
+
+
+/* Add this CSS at the end of your existing CSS file */
+
+@media (max-width: 1024px) {
+  .contact-content {
+    flex-direction: column; /* Stack the contact info and form vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%; /* Use full width for both sections */
+    padding: 20px; /* Adjust padding for smaller screens */
+    margin: 20px 0; /* Add vertical margin */
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack input fields vertically */
+    align-items: stretch; /* Stretch input fields to full width */
+  }
+
+  .form-input, .form-textarea {
+    width: 100%; /* Set input and textarea to full width */
+  }
+
+  .contact-form-button {
+    width: 100%; /* Make the button full width */
+  }
+
+  .contact-text, .contact-heading {
+    font-size: 1.5rem; /* Adjust font size for headings on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-text {
+    font-size: 1.2rem; /* Further reduce font size for very small screens */
+  }
+
+  .contact-heading {
+    font-size: 2rem; /* Further reduce font size for very small screens */
+  }
+
+  .contact-info-heading,
+  .contact-form-heading {
+    font-size: 1.2rem; /* Adjust the font size of section headings */
+  }
+
+  .contact-info-text {
+    font-size: 0.9rem; /* Adjust the font size of contact info text */
+  }
+
+  .social-icons {
+    gap: 10px; /* Reduce spacing between social icons */
+  }
+
+  .social-icon {
+    width: 30px; /* Smaller icons for smaller screens */
+    height: 30px; /* Smaller icons for smaller screens */
+    font-size: 0.7rem; /* Smaller font size for icons */
+  }
 }

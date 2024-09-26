@@ -182,3 +182,80 @@
     animation: slideInFromBottom 0.8s ease-out forwards;
     animation-delay: 0.5s; /* Adjust this value to set the delay */
 }
+
+
+
+
+
+/* Responsive */
+
+/* Responsive styles */
+
+/* For small devices (tablets) */
+@media (max-width: 768px) {
+  .about-container {
+      margin-top: 100px; /* Reduce top margin */
+  }
+
+  .service-heading {
+      font-size: 2.5em; /* Decrease font size for headings */
+  }
+
+  .image-container {
+      flex-direction: column; /* Stack text and image vertically */
+      align-items: center; /* Center align items */
+  }
+
+  .text-left, .text-right {
+      max-width: 100%; /* Allow text containers to take full width */
+      padding: 0 20px; /* Add padding for mobile */
+      text-align: center; /* Center text for mobile */
+  }
+
+  .about-image-wrapper {
+      flex: 0 0 100%; /* Make the image take full width */
+      padding: 0; /* Remove padding */
+      margin: 20px 0; /* Add margin for spacing */
+  }
+
+  .about-image {
+      width: 100%; /* Ensure the image takes full width */
+      transform: translateY(0); /* Reset transform for responsiveness */
+  }
+
+  .text-title {
+      margin-top: 50px; /* Adjust margin for titles */
+  }
+
+  .text-paragraph {
+      margin-top: 20px; /* Adjust top margin */
+  }
+
+  .contact-us-btn {
+      padding: 15px 30px; /* Adjust padding for button */
+      font-size: 14px; /* Decrease font size */
+  }
+}
+
+/* For extra-small devices (mobile phones) */
+@media (max-width: 480px) {
+  .story-text {
+      font-size: 0.8em; /* Reduce font size */
+  }
+
+  .service-heading {
+      font-size: 2em; /* Further decrease font size */
+  }
+
+  .text-title {
+      font-size: 1.5em; /* Decrease title font size */
+  }
+
+  .text-paragraph {
+      font-size: 1em; /* Adjust paragraph font size */
+  }
+
+  .signature-text {
+      font-size: 1.5em; /* Adjust signature font size */
+  }
+}

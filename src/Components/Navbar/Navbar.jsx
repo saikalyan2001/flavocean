@@ -106,12 +106,6 @@ const Navbar = () => {
         </ul>
 
         <ul className="nav-other-links">
-          {/* <li className="icon-link" onClick={toggleSearch}>
-            <NavLink className="active-link">
-              <MdSearch className="icon-search" />
-            </NavLink>
-          </li> */}
-
           <li className="icon-link">
             <p className="active-link">
               <MdAccountCircle
@@ -122,18 +116,6 @@ const Navbar = () => {
           </li>
           
         </ul>
-
-        {/* Search Pop-up */}
-        {isSearchOpen && (
-          <div className="search-popup">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="search-input"
-              onBlur={() => setIsSearchOpen(false)} // Close the popup on blur
-            />
-          </div>
-        )}
       </nav>
     </>
   );

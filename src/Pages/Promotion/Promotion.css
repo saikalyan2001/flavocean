@@ -1,5 +1,5 @@
 .promotion-container {
-    height: 200vh;
+    height: fit-content;
     /* background-color: rgb(216, 208, 208); */
     padding-top: 120px;
 }
@@ -179,3 +179,60 @@
 
 
 
+
+
+/* Responsiveness */ 
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .promotion-heading {
+        font-size: 2.5rem; /* Decrease heading size */
+    }
+
+    .promotion-layout {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .promotion-images-container,
+    .promotion-info-container,
+    .promotion-info-container2 {
+        width: 100%; /* Ensure containers take full width */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .promotion-flavour-image {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .promotion-flavour-image3 {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .promotion-text {
+        font-size: 0.9rem; /* Smaller text */
+    }
+
+    .promotion-info-heading {
+        font-size: 1.5rem; /* Decrease heading size */
+    }
+
+    .promotion-info-text {
+        font-size: 1rem; /* Smaller text */
+    }
+
+    .promotion-button {
+        font-size: 0.8rem; /* Smaller button text */
+        padding: 15px 30px; /* Adjust padding */
+    }
+
+    .promotion-flavour-image {
+        width: 50%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}

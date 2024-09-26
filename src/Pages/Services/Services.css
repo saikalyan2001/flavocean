@@ -26,6 +26,7 @@
     gap: 20px;
 }
 
+
 .service-item {
     text-align: center;
     flex: 1;
@@ -159,3 +160,69 @@
     animation-delay: 0.8s; /* Consistent delay */
 }
 
+
+
+
+
+
+/* Responsiveness */
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1200px) {
+    .services-grid {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .service-item {
+        margin: 10px 0; /* Adjust margins for stacked layout */
+        width: 90%; /* Limit the width of service items */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-description {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+    }
+
+    .services-heading {
+        font-size: 2.5rem; /* Smaller heading */
+    }
+
+    .service-title {
+        font-size: 1.5rem; /* Smaller title font */
+    }
+
+    .service-description {
+        font-size: 1rem; /* Smaller description font */
+    }
+
+    .service-button {
+        padding: 12px 25px; /* Adjust button padding */
+        font-size: 12px; /* Smaller button font */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-description {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+
+    .services-heading {
+        font-size: 2rem; /* Further reduce heading size */
+    }
+
+    .service-title {
+        font-size: 1.2rem; /* Further reduce title size */
+    }
+
+    .service-description {
+        font-size: 0.9rem; /* Further reduce description size */
+    }
+
+    .service-button {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 11px; /* Further reduce button font */
+    }
+}

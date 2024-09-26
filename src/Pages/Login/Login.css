@@ -165,3 +165,170 @@
     display: flex;
     gap: 5px;
 }
+
+
+
+/* Responsive */
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .login-form {
+      width: 90%; /* Adjust width on larger screens */
+    }
+  
+    .login-heading {
+      height: auto; /* Allow the height to adjust */
+      padding: 20px; /* Add some padding */
+    }
+  
+    .login-h2 {
+      font-size: 2.5rem; /* Smaller heading size */
+    }
+  
+    .login-p {
+      font-size: 1rem; /* Smaller paragraph size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .login-navbar {
+      flex-direction: column; /* Stack elements */
+      align-items: flex-start; /* Align items to start */
+      padding: 15px; /* Adjust padding */
+    }
+  
+    .login-nav-links {
+      flex-direction: column; /* Stack nav links vertically */
+      gap: 5px; /* Reduce gap */
+    }
+  
+    .login-nav-links li {
+      margin: 5px 0; /* Adjust margin */
+    }
+  
+    .login-brand-logo {
+      font-size: 1.5rem; /* Smaller brand logo */
+    }
+  
+    .login-container {
+      margin-top: 100px; /* Adjust margin for smaller screens */
+    }
+  
+    .form-heading {
+      margin-left: 20px; /* Adjust margin */
+    }
+  
+    .login-btn {
+      width: 100%; /* Full width button on smaller screens */
+      padding: 15px; /* Adjust padding */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-h2 {
+      font-size: 2rem; /* Further decrease heading size */
+    }
+  
+    .login-p {
+      font-size: 0.9rem; /* Smaller paragraph size */
+    }
+  
+    .login-form {
+      padding: 10px; /* Adjust padding */
+    }
+  
+    .login-btn {
+      padding: 10px; /* Adjust button padding */
+    }
+  
+    .lost-pass {
+      font-size: 1rem; /* Smaller font size */
+    }
+  
+    .log-remember {
+      flex-direction: column; /* Stack remember me label */
+    }
+  }
+  
+
+
+  /* Existing Navbar Styles */
+
+/* Add responsive styles for navbar */
+@media (max-width: 1200px) {
+    .login-nav-links {
+      display: none; /* Hide nav links by default */
+      flex-direction: column; /* Stack the links vertically */
+      position: absolute; /* Position it absolutely */
+      top: 80px; /* Position it below the navbar */
+      left: 0; /* Align to the left */
+      right: 0; /* Full width */
+      background: white; /* Use the same background as the navbar */
+      padding: 20px; /* Add some padding */
+      border-radius: 5px; /* Slight rounding for aesthetics */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+      z-index: 1000; /* Ensure it appears above other content */
+    }
+  
+    .login-nav-links.active {
+      display: flex; /* Show the links when the menu is open */
+    }
+  
+    .hamburger {
+      display: flex; /* Show the hamburger icon */
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .login-icon-link {
+      display: flex; /* Ensure the account icon is visible */
+      align-items: center; /* Center vertically */
+    }
+  
+    .login-icon {
+      font-size: 2.5rem; /* Size for the hamburger icon */
+      color: #333; /* Color for the icon */
+    }
+  }
+  
+  /* Additional styles for screens smaller than 600px */
+  @media (max-width: 600px) {
+    .login-navbar {
+      flex-direction: column; /* Stack items vertically */
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .login-logo {
+      margin-bottom: 10px; /* Add space below the logo */
+    }
+  
+    .login-nav-links {
+      margin-top: 10px; /* Space above the nav links */
+    }
+  
+    .login-nav-other-links {
+      margin-right: 65px;
+    }
+  
+    .login-brand-logo {
+      text-align: center; /* Center the logo text */
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .hamburger {
+      display: none; /* Hide hamburger on larger screens */
+    }
+  
+    .login-nav-links {
+      display: flex; /* Show nav links on larger screens */
+    }
+  
+    .login-nav-other-links {
+      display: flex; /* Show other links on larger screens */
+    }
+  }
+  

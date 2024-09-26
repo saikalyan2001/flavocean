@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { MdAccountCircle } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
 import "./Login.css";
+
+
+import {
+  MdSearch,
+  MdArrowBackIos,
+  MdArrowForwardIos,
+  MdMenu,
+  MdClose
+} from "react-icons/md"; // Add arrow icons
 
 const Login = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -12,7 +22,7 @@ const Login = () => {
   useEffect(() => {
     const handleScroll = () => {
       const navbarHeight = document.querySelector(
-        ".login-sticky-navbar"
+        ".login-navbar"
       ).offsetHeight;
       if (window.scrollY >= navbarHeight) {
         setIsSticky(true);
@@ -37,6 +47,14 @@ const Login = () => {
         <div className="login-logo">
           <h2 className="login-brand-logo">Flavour's Ocean</h2>
         </div>
+
+        <div className="hamburger" onClick={() => {
+  const navLinks = document.querySelector('.login-nav-links');
+  navLinks.classList.toggle('active');
+}}>
+  <MdMenu className="login-icon" /> {/* Replace MdMenu with your preferred hamburger icon */}
+</div>
+
 
         <ul className="login-nav-links">
           <li>
@@ -123,30 +141,30 @@ const Login = () => {
           <h1 className="form-heading">Login</h1>
         </div>
 
-        <div className="login-form">
-          <label htmlFor="" className="login-label">
+        <form className="login-form" id="login-form">
+          <label htmlFor="username"  className="login-label">
             Username Or Email Address *
           </label>
-          <input type="text" />
+          <input type="text"  id="username" name="username" />
 
-          <label htmlFor="" className="login-label">
+          <label htmlFor="password" className="login-label">
             Password *
           </label>
-          <input type="text" />
+          <input type="text"  id="password" name="password" />
 
           <div className="log-remember">
-            <input type="checkbox" />
-            <label htmlFor="" className="login-label">
+            <input type="checkbox" id="remember" name="remember" />
+            <label htmlFor="remember" className="login-label">
               Remember Me
             </label>
           </div>
 
           <button className="login-btn">Log in</button>
 
-          <a href="" className="lost-pass">
+          <a href="#" className="lost-pass">
             Lost your password?
           </a>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
     text-align: left;
     padding: 20px;
     /* background-color: rgb(172, 168, 168); */
-    height: 150vh;
+    height: fit-content;
     display: flex;
     align-items: flex-start;
     box-sizing: border-box;
@@ -278,3 +278,110 @@
 .modal:hover {
     cursor: pointer;
 }
+
+
+
+
+
+
+/* Responsive */
+
+
+/* Base styles remain unchanged */
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .gallery-container {
+      padding: 10px;
+    }
+  
+    .gallery-content {
+      margin-left: 20px;
+      margin-top: 80px;
+    }
+  
+    .gallery-title {
+      font-size: 0.9rem;
+    }
+  
+    .gallery-subtitle {
+      font-size: 2.5rem;
+    }
+  
+    .gallery-description {
+      max-width: 300px;
+      font-size: 1rem;
+    }
+  
+    .arrow {
+      padding: 20px 25px;
+      font-size: 1.5rem;
+    }
+  
+    .food-sections {
+      gap: 20px;
+    }
+  
+    .food-item {
+      font-size: 0.9rem;
+    }
+  
+    .gallery-frames-container {
+      margin-top: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery-content {
+      margin: 0;
+      text-align: center;
+    }
+  
+    .gallery-arrows {
+      margin-top: 20px;
+    }
+  
+    .gallery-photos {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 30px;
+    }
+  
+    .gallery-frame {
+      margin-right: 10px;
+    }
+  
+    .gallery-title, .gallery-subtitle, .gallery-description {
+      max-width: 100%; /* Full width */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-title {
+      font-size: 0.8rem;
+    }
+  
+    .gallery-subtitle {
+      font-size: 2rem;
+    }
+  
+    .gallery-description {
+      font-size: 0.9rem;
+    }
+  
+    .plus-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  
+    .overlay-text {
+      font-size: 1rem;
+    }
+  }
+  

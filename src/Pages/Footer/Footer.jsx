@@ -15,6 +15,8 @@ function Footer() {
               className="footer-subscription-input"
               type="text"
               placeholder="Your email"
+              id="email"
+              name="email"
             />
             <button className="footer-subscription-button">
               <span>Subscribe Now</span>
